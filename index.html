@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Pet</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>Happy Pet</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#team">Our Doctor</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="login.html" class="btn primary nav-login-btn">Login</a></li>
+            </ul>
+            <div class="language-selector">
+                <select id="languageChanger">
+                    <option value="en">English</option>
+                    <option value="si">සිංහල</option>
+                    <option value="ta">தமிழ்</option>
+                </select>
+            </div>
+            <div class="theme-toggle">
+                <i class="fas fa-sun"></i>
+                <label class="theme-switch">
+                    <input type="checkbox" id="themeToggle">
+                    <span class="slider"></span>
+                </label>
+                <i class="fas fa-moon"></i>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Your Pet's Health is Our Priority</h1>
+                <p>Providing compassionate and professional veterinary care for your beloved pets.</p>
+                <div class="cta-buttons">
+                    <a href="appointment.html" class="btn primary">Book Appointment</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3>General Check-ups</h3>
+                    <p>Regular health assessments and preventive care.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-syringe"></i>
+                    <h3>Vaccinations</h3>
+                    <p>Complete vaccination schedules for all pets.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-tooth"></i>
+                    <h3>Dental Care</h3>
+                    <p>Professional teeth cleaning and oral health.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-stethoscope"></i>
+                    <h3>Emergency Care</h3>
+                    <p>24/7 emergency veterinary services.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Our clinic is dedicated to providing the highest quality veterinary care. Our experienced team is committed to ensuring your pets receive the best treatment in a warm, caring environment.</p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <h3>10+</h3>
+                            <p>Years of Experience</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>1000+</h3>
+                            <p>Happy Pets</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>24/7</h3>
+                            <p>Emergency Service</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="team">
+        <div class="container">
+            <h2>Our Doctor</h2>
+            <div class="team-grid-single">
+                <div class="team-member">
+                    <img src="im.jpeg" alt="Our Doctor">
+                    <h3>Dr. Nuwan Shyamal</h3>
+                    <p>Chief Veterinarian</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="info-item"><i class="fas fa-map-marker-alt"></i><p>Galle,Mapalagama Road,<br>Wanduramba</p></div>
+                    <div class="info-item"><i class="fas fa-phone"></i><p>+1 234 567 890</p></div>
+                    <div class="info-item"><i class="fas fa-envelope"></i><p>info@vetclinic.com</p></div>
+                </div>
+                <form class="contact-form" id="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn primary">Send Message</button>
+                </form>
+                    <div id="confirmation-message" style="display: none;">
+                        <h3>Thank You!</h3>
+                        <p>Your message has been sent successfully.</p>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Happy Pet. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Dashboard - Happy Pet</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-page-body">
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none;"><h1>Happy Pet</h1></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#my-pets">My Pets</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="index.html">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="dashboard-main">
+        <div class="container">
+            <header class="dashboard-header">
+                <h2>Welcome, [Pet Owner Name]!</h2>
+                <p>Here is an overview of your pets' health and upcoming appointments.</p>
+            </header>
+
+            <section id="my-pets" class="dashboard-section">
+                <h3>My Pets</h3>
+                <div class="pets-grid">
+                    <!-- Pet Card 1 -->
+                    <div class="pet-card">
+                        <img src="GoldenRetriever.jpeg" alt="Pet Photo" class="pet-photo">
+                        <div class="pet-info">
+                            <h4>Buddy</h4>
+                            <p><strong>Species:</strong> Dog</p>
+                            <p><strong>Breed:</strong> Golden Retriever</p>
+                            <p><strong>Age:</strong> 5 Years</p>
+                        </div>
+                    </div>
+                    <!-- Pet Card 2 -->
+                    <div class="pet-card">
+                        <img src="Siamese.jpg" alt="Pet Photo" class="pet-photo">
+                        <div class="pet-info">
+                            <h4>Whiskers</h4>
+                            <p><strong>Species:</strong> Cat</p>
+                            <p><strong>Breed:</strong> Siamese</p>
+                            <p><strong>Age:</strong> 3 Years</p>
+                        </div>
+                    </div>
+                    <div class="add-pet-card">
+                         <i class="fas fa-plus"></i>
+                         <p>Add New Pet</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="health-reports" class="dashboard-section">
+                <h3>Health Reports</h3>
+                <p>Request a detailed health report for your pet at any time.</p>
+                <button class="btn primary">Request Health Report</button>
+            </section>
+
+            <section id="vaccination-reminders" class="dashboard-section">
+                <h3>Vaccination Reminders</h3>
+                <div class="reminders-list">
+                    <div class="reminder-item">
+                        <p><strong>Buddy:</strong> Rabies vaccine due on <strong>2025-08-15</strong></p>
+                        <span class="status upcoming">Upcoming</span>
+                    </div>
+                    <div class="reminder-item">
+                        <p><strong>Whiskers:</strong> FVRCP vaccine due on <strong>2025-09-01</strong></p>
+                        <span class="status upcoming">Upcoming</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Happy Pet. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js" defer></script>
+</body>
+</html>
