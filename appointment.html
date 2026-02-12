@@ -5,61 +5,319 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Appointment - Happy Pet</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="appointment-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
-<body class="appointment-page-body">
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">
-                <a href="index.html" style="text-decoration: none;"><h1>Happy Pet</h1></a>
+<body>
+    <!-- Mini Navigation -->
+    <nav class="mini-navbar">
+        <div class="nav-container">
+            <div class="logo-wrapper">
+                <div class="logo-icon">
+                    <i class="fas fa-paw"></i>
+                </div>
+                <span class="logo-text">Happy<span class="highlight">Pet</span></span>
             </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-            </ul>
+            <a href="index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i>
+                <span>Back to Home</span>
+            </a>
         </div>
     </nav>
 
-    <main class="appointment-main">
-        <div class="container">
-            <div class="appointment-box">
-                <h2>Book an Appointment</h2>
-                <form id="appointment-form">
-                    <div class="input-group">
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" name="name" required>
+    <!-- Appointment Booking Section -->
+    <section class="appointment-section">
+        <div class="appointment-background">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+        </div>
+
+        <div class="appointment-container">
+            <!-- Header -->
+            <div class="appointment-header">
+                <h1>Book an Appointment</h1>
+                <p>Schedule a visit with our expert veterinarians</p>
+            </div>
+
+            <!-- Progress Steps -->
+            <div class="progress-steps">
+                <div class="step active" data-step="1">
+                    <div class="step-number">1</div>
+                    <div class="step-label">Pet Info</div>
+                </div>
+                <div class="step-line"></div>
+                <div class="step" data-step="2">
+                    <div class="step-number">2</div>
+                    <div class="step-label">Date & Time</div>
+                </div>
+                <div class="step-line"></div>
+                <div class="step" data-step="3">
+                    <div class="step-number">3</div>
+                    <div class="step-label">Confirmation</div>
+                </div>
+            </div>
+
+            <!-- Booking Form -->
+            <div class="booking-form-wrapper">
+                <form class="booking-form" id="bookingForm">
+                    <!-- Step 1: Pet Information -->
+                    <div class="form-step active" data-step="1">
+                        <h2>Pet Information</h2>
+                        <p class="step-description">Tell us about your pet</p>
+
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="petName">
+                                    <i class="fas fa-paw"></i>
+                                    Pet Name
+                                </label>
+                                <input type="text" id="petName" placeholder="e.g., Max" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="petType">
+                                    <i class="fas fa-dog"></i>
+                                    Pet Type
+                                </label>
+                                <select id="petType" required>
+                                    <option value="">Select pet type</option>
+                                    <option value="dog">Dog</option>
+                                    <option value="cat">Cat</option>
+                                    <option value="bird">Bird</option>
+                                    <option value="rabbit">Rabbit</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="petBreed">
+                                    <i class="fas fa-dna"></i>
+                                    Breed
+                                </label>
+                                <input type="text" id="petBreed" placeholder="e.g., Golden Retriever" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="petAge">
+                                    <i class="fas fa-calendar"></i>
+                                    Age
+                                </label>
+                                <input type="text" id="petAge" placeholder="e.g., 2 years" required>
+                            </div>
+
+                            <div class="form-group full-width">
+                                <label for="ownerName">
+                                    <i class="fas fa-user"></i>
+                                    Owner Name
+                                </label>
+                                <input type="text" id="ownerName" placeholder="Your full name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="ownerEmail">
+                                    <i class="fas fa-envelope"></i>
+                                    Email
+                                </label>
+                                <input type="email" id="ownerEmail" placeholder="you@example.com" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="ownerPhone">
+                                    <i class="fas fa-phone"></i>
+                                    Phone Number
+                                </label>
+                                <input type="tel" id="ownerPhone" placeholder="+1 234 567 890" required>
+                            </div>
+
+                            <div class="form-group full-width">
+                                <label for="reason">
+                                    <i class="fas fa-stethoscope"></i>
+                                    Reason for Visit
+                                </label>
+                                <select id="reason" required>
+                                    <option value="">Select reason</option>
+                                    <option value="checkup">General Check-up</option>
+                                    <option value="vaccination">Vaccination</option>
+                                    <option value="dental">Dental Care</option>
+                                    <option value="emergency">Emergency</option>
+                                    <option value="grooming">Grooming</option>
+                                    <option value="surgery">Surgery Consultation</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group full-width">
+                                <label for="notes">
+                                    <i class="fas fa-notes-medical"></i>
+                                    Additional Notes (Optional)
+                                </label>
+                                <textarea id="notes" rows="3" placeholder="Any specific concerns or information..."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn-primary btn-large" onclick="nextStep(2)">
+                                <span>Continue</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
                     </div>
-                    <div class="input-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" required>
+
+                    <!-- Step 2: Date & Time Selection -->
+                    <div class="form-step" data-step="2">
+                        <h2>Select Date & Time</h2>
+                        <p class="step-description">Choose your preferred appointment slot</p>
+
+                        <div class="datetime-selection">
+                            <!-- Calendar -->
+                            <div class="calendar-wrapper">
+                                <div class="calendar-header">
+                                    <button type="button" class="calendar-nav" id="prevMonth">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </button>
+                                    <h3 id="currentMonth">February 2026</h3>
+                                    <button type="button" class="calendar-nav" id="nextMonth">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </button>
+                                </div>
+                                <div class="calendar-grid" id="calendarGrid">
+                                    <!-- Calendar days will be generated by JavaScript -->
+                                </div>
+                            </div>
+
+                            <!-- Time Slots -->
+                            <div class="time-slots-wrapper">
+                                <h3>Available Time Slots</h3>
+                                <div class="selected-date-display" id="selectedDateDisplay">
+                                    Please select a date first
+                                </div>
+                                <div class="time-slots" id="timeSlots">
+                                    <!-- Time slots will be generated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn-secondary btn-large" onclick="prevStep(1)">
+                                <i class="fas fa-arrow-left"></i>
+                                <span>Back</span>
+                            </button>
+                            <button type="button" class="btn-primary btn-large" onclick="nextStep(3)">
+                                <span>Continue</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
                     </div>
-                    <div class="input-group">
-                        <label for="date">Select Date</label>
-                        <input type="date" id="date" name="date" required>
+
+                    <!-- Step 3: Confirmation -->
+                    <div class="form-step" data-step="3">
+                        <h2>Confirm Your Appointment</h2>
+                        <p class="step-description">Review your booking details</p>
+
+                        <div class="confirmation-card">
+                            <div class="confirmation-icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+
+                            <div class="confirmation-details">
+                                <div class="detail-row">
+                                    <div class="detail-label">
+                                        <i class="fas fa-paw"></i>
+                                        Pet Name
+                                    </div>
+                                    <div class="detail-value" id="confirmPetName">-</div>
+                                </div>
+
+                                <div class="detail-row">
+                                    <div class="detail-label">
+                                        <i class="fas fa-user"></i>
+                                        Owner
+                                    </div>
+                                    <div class="detail-value" id="confirmOwner">-</div>
+                                </div>
+
+                                <div class="detail-row">
+                                    <div class="detail-label">
+                                        <i class="fas fa-stethoscope"></i>
+                                        Service
+                                    </div>
+                                    <div class="detail-value" id="confirmService">-</div>
+                                </div>
+
+                                <div class="detail-row highlight">
+                                    <div class="detail-label">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        Date & Time
+                                    </div>
+                                    <div class="detail-value" id="confirmDateTime">-</div>
+                                </div>
+
+                                <div class="detail-row">
+                                    <div class="detail-label">
+                                        <i class="fas fa-envelope"></i>
+                                        Email
+                                    </div>
+                                    <div class="detail-value" id="confirmEmail">-</div>
+                                </div>
+
+                                <div class="detail-row">
+                                    <div class="detail-label">
+                                        <i class="fas fa-phone"></i>
+                                        Phone
+                                    </div>
+                                    <div class="detail-value" id="confirmPhone">-</div>
+                                </div>
+                            </div>
+
+                            <div class="confirmation-note">
+                                <i class="fas fa-info-circle"></i>
+                                <p>You will receive a confirmation email with appointment details.</p>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn-secondary btn-large" onclick="prevStep(2)">
+                                <i class="fas fa-arrow-left"></i>
+                                <span>Back</span>
+                            </button>
+                            <button type="submit" class="btn-primary btn-large">
+                                <i class="fas fa-check"></i>
+                                <span>Confirm Appointment</span>
+                            </button>
+                        </div>
                     </div>
-                    <div class="input-group">
-                        <label for="time">Select Time</label>
-                        <select id="time" name="time" required>
-                            <option value="">-- Please choose a time --</option>
-                            <option value="09:00">9:00 AM</option>
-                            <option value="10:00">10:00 AM</option>
-                            <option value="11:00">11:00 AM</option>
-                            <option value="12:00">12:00 PM</option>
-                            <option value="14:00">2:00 PM</option>
-                            <option value="15:00">3:00 PM</option>
-                            <option value="16:00">4:00 PM</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn primary" style="width: 100%;">Confirm Appointment</button>
                 </form>
-                <div id="appointment-confirmation" style="display: none; text-align: center;">
-                    <h3>Thank You!</h3>
-                    <p>Your appointment has been successfully booked. We look forward to seeing you and your pet!</p>
+
+                <!-- Success Message -->
+                <div class="booking-success" id="bookingSuccess" style="display: none;">
+                    <div class="success-animation">
+                        <div class="success-checkmark">
+                            <i class="fas fa-check"></i>
+                        </div>
+                    </div>
+                    <h2>Appointment Confirmed!</h2>
+                    <p>Your appointment has been successfully booked.</p>
+                    <div class="success-details">
+                        <p>A confirmation email has been sent to your email address.</p>
+                        <p>We look forward to seeing you and your pet!</p>
+                    </div>
+                    <div class="success-actions">
+                        <a href="index.html" class="btn-primary btn-large">
+                            <i class="fas fa-home"></i>
+                            <span>Back to Home</span>
+                        </a>
+                        <button type="button" class="btn-secondary btn-large" onclick="resetBooking()">
+                            <i class="fas fa-plus"></i>
+                            <span>Book Another</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-    </main>
+    </section>
 
     <script src="script.js"></script>
+    <script src="appointment-script.js"></script>
 </body>
 </html>

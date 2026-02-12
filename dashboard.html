@@ -3,89 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Client Dashboard - Happy Pet</title>
+    <title>My Dashboard - Happy Pet</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        .dashboard-container { display: grid; grid-template-columns: 250px 1fr; min-height: 100vh; }
+        .sidebar { background: var(--surface-elevated); padding: 2rem 1rem; border-right: 1px solid var(--border-color); }
+        .sidebar-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2rem; padding: 0 0.5rem; }
+        .sidebar-menu { list-style: none; }
+        .sidebar-menu li { margin-bottom: 0.5rem; }
+        .sidebar-menu a { display: flex; align-items: center; gap: 0.75rem; padding: 0.875rem 1rem; border-radius: var(--radius-md); color: var(--text-secondary); font-weight: 500; transition: all var(--transition-base); }
+        .sidebar-menu a:hover, .sidebar-menu a.active { background: var(--primary-gradient); color: white; }
+        .main-content { padding: 2rem; background: var(--background); }
+        .dashboard-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 2px solid var(--border-color); }
+        .pet-card { background: var(--surface-elevated); padding: 1.5rem; border-radius: var(--radius-lg); border: 2px solid var(--border-color); transition: all var(--transition-base); }
+        .pet-card:hover { border-color: var(--primary-color); transform: translateY(-5px); box-shadow: var(--shadow-xl); }
+        .pet-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+        .pet-avatar { width: 80px; height: 80px; background: var(--primary-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2.5rem; margin-bottom: 1rem; }
+        .info-row { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--border-light); }
+        @media (max-width: 992px) { .dashboard-container { grid-template-columns: 1fr; } .sidebar { display: none; } }
+    </style>
 </head>
-<body class="dashboard-page-body">
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">
-                <a href="index.html" style="text-decoration: none;"><h1>Happy Pet</h1></a>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-icon"><i class="fas fa-paw"></i></div>
+                <span class="logo-text">Happy<span class="highlight">Pet</span></span>
             </div>
-            <ul class="nav-links">
-                <li><a href="#my-pets">My Pets</a></li>
-                <li><a href="#">Profile</a></li>
-                <li><a href="index.html">Logout</a></li>
+            <ul class="sidebar-menu">
+                <li><a href="#" class="active"><i class="fas fa-th-large"></i> Dashboard</a></li>
+                <li><a href="#"><i class="fas fa-paw"></i> My Pets</a></li>
+                <li><a href="appointment.html"><i class="fas fa-calendar-plus"></i> Book Appointment</a></li>
+                <li><a href="#"><i class="fas fa-calendar-check"></i> My Appointments</a></li>
+                <li><a href="#"><i class="fas fa-file-medical"></i> Medical Records</a></li>
+                <li><a href="#"><i class="fas fa-prescription-bottle"></i> Prescriptions</a></li>
+                <li><a href="#"><i class="fas fa-user"></i> My Profile</a></li>
+                <li><a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
             </ul>
-        </div>
-    </nav>
-
-    <main class="dashboard-main">
-        <div class="container">
-            <header class="dashboard-header">
-                <h2>Welcome, [Pet Owner Name]!</h2>
-                <p>Here is an overview of your pets' health and upcoming appointments.</p>
-            </header>
-
-            <section id="my-pets" class="dashboard-section">
-                <h3>My Pets</h3>
-                <div class="pets-grid">
-                    <!-- Pet Card 1 -->
-                    <div class="pet-card">
-                        <img src="GoldenRetriever.jpeg" alt="Pet Photo" class="pet-photo">
-                        <div class="pet-info">
-                            <h4>Buddy</h4>
-                            <p><strong>Species:</strong> Dog</p>
-                            <p><strong>Breed:</strong> Golden Retriever</p>
-                            <p><strong>Age:</strong> 5 Years</p>
-                        </div>
-                    </div>
-                    <!-- Pet Card 2 -->
-                    <div class="pet-card">
-                        <img src="Siamese.jpg" alt="Pet Photo" class="pet-photo">
-                        <div class="pet-info">
-                            <h4>Whiskers</h4>
-                            <p><strong>Species:</strong> Cat</p>
-                            <p><strong>Breed:</strong> Siamese</p>
-                            <p><strong>Age:</strong> 3 Years</p>
-                        </div>
-                    </div>
-                    <div class="add-pet-card">
-                         <i class="fas fa-plus"></i>
-                         <p>Add New Pet</p>
-                    </div>
+        </aside>
+        <main class="main-content">
+            <div class="dashboard-header">
+                <div>
+                    <h1>My Dashboard</h1>
+                    <p style="color: var(--text-secondary);">Welcome back, John Doe</p>
                 </div>
-            </section>
-
-            <section id="health-reports" class="dashboard-section">
-                <h3>Health Reports</h3>
-                <p>Request a detailed health report for your pet at any time.</p>
-                <button class="btn primary">Request Health Report</button>
-            </section>
-
-            <section id="vaccination-reminders" class="dashboard-section">
-                <h3>Vaccination Reminders</h3>
-                <div class="reminders-list">
-                    <div class="reminder-item">
-                        <p><strong>Buddy:</strong> Rabies vaccine due on <strong>2025-08-15</strong></p>
-                        <span class="status upcoming">Upcoming</span>
-                    </div>
-                    <div class="reminder-item">
-                        <p><strong>Whiskers:</strong> FVRCP vaccine due on <strong>2025-09-01</strong></p>
-                        <span class="status upcoming">Upcoming</span>
-                    </div>
+                <div id="themeSwitcher" class="theme-switcher"><div class="theme-icon"><i class="fas fa-sun"></i><i class="fas fa-moon"></i></div></div>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+                <div style="background: var(--surface-elevated); padding: 1.5rem; border-radius: var(--radius-lg); text-align: center;">
+                    <div style="font-size: 2rem; color: var(--primary-color); margin-bottom: 0.5rem;"><i class="fas fa-paw"></i></div>
+                    <h3 style="margin-bottom: 0.5rem;">2</h3>
+                    <p style="color: var(--text-secondary);">Total Pets</p>
                 </div>
-            </section>
-        </div>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Happy Pet. All rights reserved.</p>
-        </div>
-    </footer>
-    <script src="script.js" defer></script>
+                <div style="background: var(--surface-elevated); padding: 1.5rem; border-radius: var(--radius-lg); text-align: center;">
+                    <div style="font-size: 2rem; color: var(--primary-color); margin-bottom: 0.5rem;"><i class="fas fa-calendar-check"></i></div>
+                    <h3 style="margin-bottom: 0.5rem;">3</h3>
+                    <p style="color: var(--text-secondary);">Upcoming Appointments</p>
+                </div>
+                <div style="background: var(--surface-elevated); padding: 1.5rem; border-radius: var(--radius-lg); text-align: center;">
+                    <div style="font-size: 2rem; color: var(--primary-color); margin-bottom: 0.5rem;"><i class="fas fa-syringe"></i></div>
+                    <h3 style="margin-bottom: 0.5rem;">5</h3>
+                    <p style="color: var(--text-secondary);">Vaccinations</p>
+                </div>
+            </div>
+            <h2 style="margin-bottom: 1.5rem;">My Pets</h2>
+            <div class="pet-grid">
+                <div class="pet-card">
+                    <div class="pet-avatar"><i class="fas fa-dog"></i></div>
+                    <h3 style="margin-bottom: 1rem;">Max</h3>
+                    <div class="info-row">
+                        <span style="color: var(--text-secondary);">Breed</span>
+                        <strong>Golden Retriever</strong>
+                    </div>
+                    <div class="info-row">
+                        <span style="color: var(--text-secondary);">Age</span>
+                        <strong>3 years</strong>
+                    </div>
+                    <div class="info-row">
+                        <span style="color: var(--text-secondary);">Last Visit</span>
+                        <strong>Jan 15, 2026</strong>
+                    </div>
+                    <div class="info-row">
+                        <span style="color: var(--text-secondary);">Next Checkup</span>
+                        <strong>Mar 15, 2026</strong>
+                    </div>
+                    <a href="appointment.html" class="btn-primary" style="width: 100%; margin-top: 1rem; justify-content: center;"><i class="fas fa-calendar-plus"></i> <span>Book Appointment</span></a>
+                </div>
+                <div class="pet-card">
+                    <div class="pet-avatar"><i class="fas fa-cat"></i></div>
+                    <h3 style="margin-bottom: 1rem;">Whiskers</h3>
+                    <div class="info-row">
+                        <span style="color: var(--text-secondary);">Breed</span>
+                        <strong>Siamese</strong>
+                    </div>
+                    <div class="info-row">
+                        <span style="color: var(--text-secondary);">Age</span>
+                        <strong>2 years</strong>
+                    </div>
+                    <div class="info-row">
+                        <span style="color: var(--text-secondary);">Last Visit</span>
+                        <strong>Jan 20, 2026</strong>
+                    </div>
+                    <div class="info-row">
+                        <span style="color: var(--text-secondary);">Next Checkup</span>
+                        <strong>Apr 20, 2026</strong>
+                    </div>
+                    <a href="appointment.html" class="btn-primary" style="width: 100%; margin-top: 1rem; justify-content: center;"><i class="fas fa-calendar-plus"></i> <span>Book Appointment</span></a>
+                </div>
+            </div>
+            <div style="background: var(--surface-elevated); padding: 2rem; border-radius: var(--radius-lg);">
+                <h2 style="margin-bottom: 1.5rem;">Upcoming Appointments</h2>
+                <div style="border-left: 4px solid var(--primary-color); padding: 1.5rem; background: var(--surface); border-radius: var(--radius-md); margin-bottom: 1rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.75rem;">
+                        <div>
+                            <h3>Max - General Checkup</h3>
+                            <p style="color: var(--text-secondary);">Dr. Nuwan Shyamal</p>
+                        </div>
+                        <span style="background: rgba(102, 126, 234, 0.1); color: var(--primary-color); padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-weight: 700; font-size: 0.75rem;">CONFIRMED</span>
+                    </div>
+                    <p style="color: var(--text-secondary);"><i class="fas fa-calendar"></i> February 5, 2026 at 10:00 AM</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>

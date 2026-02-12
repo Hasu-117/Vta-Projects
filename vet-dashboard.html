@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vet Dashboard - Happy Pet</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        .dashboard-container { display: grid; grid-template-columns: 250px 1fr; min-height: 100vh; }
+        .sidebar { background: var(--surface-elevated); padding: 2rem 1rem; border-right: 1px solid var(--border-color); }
+        .sidebar-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2rem; padding: 0 0.5rem; }
+        .sidebar-menu { list-style: none; }
+        .sidebar-menu li { margin-bottom: 0.5rem; }
+        .sidebar-menu a { display: flex; align-items: center; gap: 0.75rem; padding: 0.875rem 1rem; border-radius: var(--radius-md); color: var(--text-secondary); font-weight: 500; transition: all var(--transition-base); }
+        .sidebar-menu a:hover, .sidebar-menu a.active { background: var(--primary-gradient); color: white; }
+        .main-content { padding: 2rem; background: var(--background); }
+        .dashboard-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 2px solid var(--border-color); }
+        .appointment-card { background: var(--surface-elevated); padding: 1.5rem; border-radius: var(--radius-lg); margin-bottom: 1rem; border-left: 4px solid var(--primary-color); }
+        .appointment-card:hover { transform: translateX(5px); box-shadow: var(--shadow-lg); }
+        .patient-info { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+        .patient-avatar { width: 50px; height: 50px; background: var(--primary-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; }
+        .quick-actions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+        .action-btn { padding: 0.75rem 1rem; background: var(--surface-elevated); border: 2px solid var(--border-color); border-radius: var(--radius-md); text-align: center; cursor: pointer; transition: all var(--transition-base); }
+        .action-btn:hover { border-color: var(--primary-color); transform: translateY(-2px); }
+        @media (max-width: 992px) { .dashboard-container { grid-template-columns: 1fr; } .sidebar { display: none; } }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-icon"><i class="fas fa-paw"></i></div>
+                <span class="logo-text">Happy<span class="highlight">Pet</span></span>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="#" class="active"><i class="fas fa-calendar-day"></i> Today's Schedule</a></li>
+                <li><a href="#"><i class="fas fa-clipboard-list"></i> My Patients</a></li>
+                <li><a href="#"><i class="fas fa-file-medical"></i> Medical Records</a></li>
+                <li><a href="#"><i class="fas fa-prescription"></i> Prescriptions</a></li>
+                <li><a href="#"><i class="fas fa-chart-bar"></i> My Statistics</a></li>
+                <li><a href="#"><i class="fas fa-user-circle"></i> Profile</a></li>
+                <li><a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </aside>
+        <main class="main-content">
+            <div class="dashboard-header">
+                <div>
+                    <h1>Veterinarian Dashboard</h1>
+                    <p style="color: var(--text-secondary);">Dr. Nuwan Shyamal - Today's Schedule</p>
+                </div>
+                <div id="themeSwitcher" class="theme-switcher"><div class="theme-icon"><i class="fas fa-sun"></i><i class="fas fa-moon"></i></div></div>
+            </div>
+            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 2rem; border-radius: var(--radius-lg); color: white; margin-bottom: 2rem;">
+                <h2 style="color: white; margin-bottom: 0.5rem;">Today: February 3, 2026</h2>
+                <p style="font-size: 1.125rem;">You have 8 appointments scheduled</p>
+            </div>
+            <div style="margin-bottom: 2rem;">
+                <h2 style="margin-bottom: 1rem;">Upcoming Appointments</h2>
+                <div class="appointment-card">
+                    <div class="patient-info">
+                        <div class="patient-avatar"><i class="fas fa-dog"></i></div>
+                        <div>
+                            <h3 style="margin-bottom: 0.25rem;">Max - Golden Retriever</h3>
+                            <p style="color: var(--text-secondary); font-size: 0.875rem;">Owner: John Doe | 10:00 AM</p>
+                        </div>
+                    </div>
+                    <p style="margin-bottom: 1rem;"><strong>Service:</strong> General Check-up</p>
+                    <div class="quick-actions">
+                        <div class="action-btn"><i class="fas fa-eye"></i> View Details</div>
+                        <div class="action-btn"><i class="fas fa-notes-medical"></i> Add Notes</div>
+                        <div class="action-btn"><i class="fas fa-check"></i> Complete</div>
+                    </div>
+                </div>
+                <div class="appointment-card">
+                    <div class="patient-info">
+                        <div class="patient-avatar"><i class="fas fa-cat"></i></div>
+                        <div>
+                            <h3 style="margin-bottom: 0.25rem;">Whiskers - Siamese Cat</h3>
+                            <p style="color: var(--text-secondary); font-size: 0.875rem;">Owner: Sarah Johnson | 11:30 AM</p>
+                        </div>
+                    </div>
+                    <p style="margin-bottom: 1rem;"><strong>Service:</strong> Vaccination</p>
+                    <div class="quick-actions">
+                        <div class="action-btn"><i class="fas fa-eye"></i> View Details</div>
+                        <div class="action-btn"><i class="fas fa-notes-medical"></i> Add Notes</div>
+                        <div class="action-btn"><i class="fas fa-check"></i> Complete</div>
+                    </div>
+                </div>
+                <div class="appointment-card">
+                    <div class="patient-info">
+                        <div class="patient-avatar"><i class="fas fa-dog"></i></div>
+                        <div>
+                            <h3 style="margin-bottom: 0.25rem;">Charlie - Labrador</h3>
+                            <p style="color: var(--text-secondary); font-size: 0.875rem;">Owner: Mike Peterson | 02:00 PM</p>
+                        </div>
+                    </div>
+                    <p style="margin-bottom: 1rem;"><strong>Service:</strong> Dental Care</p>
+                    <div class="quick-actions">
+                        <div class="action-btn"><i class="fas fa-eye"></i> View Details</div>
+                        <div class="action-btn"><i class="fas fa-notes-medical"></i> Add Notes</div>
+                        <div class="action-btn"><i class="fas fa-check"></i> Complete</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
