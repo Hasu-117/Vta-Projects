@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Pet - Premium Veterinary Care</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo-wrapper">
+                <div class="logo-icon">
+                    <i class="fas fa-paw"></i>
+                </div>
+                <span class="logo-text">Happy<span class="highlight">Pet</span></span>
+            </div>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#team" class="nav-link">Our Team</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <div class="theme-switcher" id="themeSwitcher">
+                    <div class="theme-icon">
+                        <i class="fas fa-sun"></i>
+                        <i class="fas fa-moon"></i>
+                    </div>
+                </div>
+                
+                <div class="language-dropdown">
+                    <button class="lang-btn" id="langBtn">
+                        <i class="fas fa-globe"></i>
+                        <span id="currentLang">EN</span>
+                    </button>
+                    <div class="lang-menu" id="langMenu">
+                        <a href="#" data-lang="en">English</a>
+                        <a href="#" data-lang="si">සිංහල</a>
+                        <a href="#" data-lang="ta">தமிழ்</a>
+                    </div>
+                </div>
+
+                <a href="login.html" class="btn-primary nav-btn">
+                    <i class="fas fa-user"></i>
+                    <span>Login</span>
+                </a>
+
+                <button class="mobile-toggle" id="mobileToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-background">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
+            </div>
+        </div>
+        
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-heart"></i>
+                    <span>10+ Years of Excellence</span>
+                </div>
+                
+                <h1 class="hero-title">
+                    Your Pet's Health is Our
+                    <span class="gradient-text">Priority</span>
+                </h1>
+                
+                <p class="hero-description">
+                    Experience compassionate, professional veterinary care with cutting-edge technology 
+                    and a team that truly loves animals. We're here 24/7 for your beloved companions.
+                </p>
+                
+                <div class="hero-cta">
+                    <a href="appointment.html" class="btn-primary btn-large">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Book Appointment</span>
+                    </a>
+                    <a href="#services" class="btn-secondary btn-large">
+                        <i class="fas fa-play"></i>
+                        <span>Explore Services</span>
+                    </a>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>5+</h3>
+                            <p>Expert Vets</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-smile"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>1000+</h3>
+                            <p>Happy Pets</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>24/7</h3>
+                            <p>Emergency Care</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <div class="image-card">
+                    <img src="hero-dog.jpg" alt="Happy Dog">
+                    <div class="image-badge">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Premium Care</span>
+                    </div>
+                </div>
+                <div class="floating-card card-1">
+                    <i class="fas fa-heartbeat"></i>
+                    <div>
+                        <strong>Health Monitoring</strong>
+                        <p>Real-time tracking</p>
+                    </div>
+                </div>
+                <div class="floating-card card-2">
+                    <i class="fas fa-syringe"></i>
+                    <div>
+                        <strong>Vaccinations</strong>
+                        <p>Up to date</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <p>Scroll to explore</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-badge">What We Offer</span>
+                <h2 class="section-title">Our Premium Services</h2>
+                <p class="section-subtitle">Comprehensive care solutions for your beloved pets</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>General Check-ups</h3>
+                    <p>Comprehensive health assessments with advanced diagnostics and preventive care plans.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Physical Examination</li>
+                        <li><i class="fas fa-check"></i> Health Screening</li>
+                        <li><i class="fas fa-check"></i> Wellness Plans</li>
+                    </ul>
+                    <a href="appointment.html" class="service-link">
+                        <span>Book Now</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="service-card featured">
+                    <div class="featured-badge">Most Popular</div>
+                    <div class="service-icon">
+                        <i class="fas fa-syringe"></i>
+                    </div>
+                    <h3>Vaccinations</h3>
+                    <p>Complete vaccination programs tailored to your pet's age, lifestyle, and health needs.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Core Vaccines</li>
+                        <li><i class="fas fa-check"></i> Lifestyle Vaccines</li>
+                        <li><i class="fas fa-check"></i> Booster Reminders</li>
+                    </ul>
+                    <a href="appointment.html" class="service-link">
+                        <span>Book Now</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tooth"></i>
+                    </div>
+                    <h3>Dental Care</h3>
+                    <p>Professional dental services including cleanings, extractions, and oral health maintenance.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Teeth Cleaning</li>
+                        <li><i class="fas fa-check"></i> Oral Surgery</li>
+                        <li><i class="fas fa-check"></i> Dental X-rays</li>
+                    </ul>
+                    <a href="appointment.html" class="service-link">
+                        <span>Book Now</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <h3>Emergency Care</h3>
+                    <p>24/7 emergency services with immediate response and critical care facilities.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> 24/7 Availability</li>
+                        <li><i class="fas fa-check"></i> Critical Care</li>
+                        <li><i class="fas fa-check"></i> Rapid Response</li>
+                    </ul>
+                    <a href="appointment.html" class="service-link emergency">
+                        <span>Emergency Contact</span>
+                        <i class="fas fa-phone"></i>
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3>Surgery</h3>
+                    <p>Advanced surgical procedures with state-of-the-art equipment and experienced surgeons.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Spay & Neuter</li>
+                        <li><i class="fas fa-check"></i> Soft Tissue Surgery</li>
+                        <li><i class="fas fa-check"></i> Orthopedic Surgery</li>
+                    </ul>
+                    <a href="appointment.html" class="service-link">
+                        <span>Learn More</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3>Grooming & Spa</h3>
+                    <p>Premium grooming services to keep your pet looking and feeling their absolute best.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Full Grooming</li>
+                        <li><i class="fas fa-check"></i> Spa Treatments</li>
+                        <li><i class="fas fa-check"></i> Nail Care</li>
+                    </ul>
+                    <a href="appointment.html" class="service-link">
+                        <span>Book Now</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="section-container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <span class="section-badge">About Happy Pet</span>
+                    <h2 class="section-title">Leading Veterinary Care Since 2014</h2>
+                    <p class="about-text">
+                        At Happy Pet, we're more than just a veterinary clinic—we're a family dedicated to 
+                        providing exceptional care for your beloved companions. Our state-of-the-art facility 
+                        combines cutting-edge technology with compassionate service.
+                    </p>
+                    <p class="about-text">
+                        With over a decade of experience, our team of certified veterinarians and caring staff 
+                        are committed to ensuring your pet receives the highest standard of medical care in a 
+                        warm, welcoming environment.
+                    </p>
+                    
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Certified Excellence</h4>
+                                <p>Award-winning veterinary care with certified professionals</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-microscope"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Advanced Technology</h4>
+                                <p>State-of-the-art diagnostic and treatment equipment</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Compassionate Care</h4>
+                                <p>Treating every pet as if they were our own</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="appointment.html" class="btn-primary btn-large">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Schedule a Visit</span>
+                    </a>
+                </div>
+
+                <div class="about-images">
+                    <div class="image-grid">
+                        <div class="grid-image large">
+                            <img src="GoldenRetriever.jpeg" alt="Happy Golden Retriever">
+                        </div>
+                        <div class="grid-image small">
+                            <img src="Siamese.jpg" alt="Siamese Cat">
+                        </div>
+                    </div>
+                    <div class="stats-overlay">
+                        <div class="stat-box">
+                            <h3>10+</h3>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="stat-box">
+                            <h3>98%</h3>
+                            <p>Satisfaction Rate</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-badge">Our Experts</span>
+                <h2 class="section-title">Meet Our Veterinary Team</h2>
+                <p class="section-subtitle">Experienced professionals dedicated to your pet's wellbeing</p>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="im.jpeg" alt="Dr. Nuwan Shyamal">
+                        <div class="team-overlay">
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3>Dr. Nuwan Shyamal</h3>
+                        <p class="team-role">Chief Veterinarian</p>
+                        <p class="team-bio">15+ years of experience in veterinary medicine with specialization in surgery and internal medicine.</p>
+                        <div class="team-specialties">
+                            <span class="specialty-tag">Surgery</span>
+                            <span class="specialty-tag">Internal Medicine</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image">
+                        <div class="placeholder-image">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <div class="team-overlay">
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3>Dr. Sarah Johnson</h3>
+                        <p class="team-role">Senior Veterinarian</p>
+                        <p class="team-bio">Specialist in exotic animals and emergency care with 10 years of experience.</p>
+                        <div class="team-specialties">
+                            <span class="specialty-tag">Exotic Animals</span>
+                            <span class="specialty-tag">Emergency Care</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image">
+                        <div class="placeholder-image">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <div class="team-overlay">
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3>Dr. Michael Chen</h3>
+                        <p class="team-role">Veterinary Dentist</p>
+                        <p class="team-bio">Board-certified veterinary dentist with expertise in advanced dental procedures.</p>
+                        <div class="team-specialties">
+                            <span class="specialty-tag">Dentistry</span>
+                            <span class="specialty-tag">Oral Surgery</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="section-container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <span class="section-badge">Get In Touch</span>
+                    <h2 class="section-title">Contact Us Today</h2>
+                    <p class="contact-description">
+                        Have questions or need to schedule an appointment? We're here to help! 
+                        Reach out to us through any of these channels.
+                    </p>
+
+                    <div class="contact-cards">
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Visit Us</h4>
+                                <p>Galle, Mapalagama Road<br>Wanduramba, Sri Lanka</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Call Us</h4>
+                                <p>+1 234 567 890</p>
+                                <span class="availability">24/7 Emergency Line</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Email Us</h4>
+                                <p>info@happypet.com</p>
+                                <span class="availability">Response within 24hrs</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Working Hours</h4>
+                                <p>Mon-Fri: 8AM - 8PM<br>Sat-Sun: 9AM - 6PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="appointment">Book Appointment</option>
+                                <option value="emergency">Emergency</option>
+                                <option value="inquiry">General Inquiry</option>
+                                <option value="feedback">Feedback</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="message">Message</label>
+                            <textarea id="message" rows="4" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary btn-large full-width">
+                            <i class="fas fa-paper-plane"></i>
+                            <span>Send Message</span>
+                        </button>
+                    </form>
+
+                    <div class="form-success" id="formSuccess" style="display: none;">
+                        <div class="success-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3>Message Sent!</h3>
+                        <p>Thank you for contacting us. We'll get back to you soon.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-paw"></i>
+                        </div>
+                        <span class="logo-text">Happy<span class="highlight">Pet</span></span>
+                    </div>
+                    <p class="footer-description">
+                        Providing exceptional veterinary care with compassion, expertise, and cutting-edge technology.
+                    </p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#team">Our Team</a></li>
+                        <li><a href="appointment.html">Book Appointment</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">General Check-ups</a></li>
+                        <li><a href="#">Vaccinations</a></li>
+                        <li><a href="#">Dental Care</a></li>
+                        <li><a href="#">Emergency Care</a></li>
+                        <li><a href="#">Surgery</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for pet care tips and updates</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email">
+                        <button type="submit">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Happy Pet Veterinary Clinic. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Happy Pet</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        .dashboard-container { display: grid; grid-template-columns: 250px 1fr; min-height: 100vh; }
+        .sidebar { background: var(--surface-elevated); padding: 2rem 1rem; border-right: 1px solid var(--border-color); }
+        .sidebar-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2rem; padding: 0 0.5rem; }
+        .sidebar-menu { list-style: none; }
+        .sidebar-menu li { margin-bottom: 0.5rem; }
+        .sidebar-menu a { display: flex; align-items: center; gap: 0.75rem; padding: 0.875rem 1rem; border-radius: var(--radius-md); color: var(--text-secondary); font-weight: 500; transition: all var(--transition-base); }
+        .sidebar-menu a:hover, .sidebar-menu a.active { background: var(--primary-gradient); color: white; }
+        .main-content { padding: 2rem; background: var(--background); }
+        .dashboard-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 2px solid var(--border-color); }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+        .stat-card { background: var(--surface-elevated); padding: 1.5rem; border-radius: var(--radius-lg); border-left: 4px solid var(--primary-color); }
+        .stat-card h3 { font-size: 2rem; margin: 0.5rem 0; background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .data-table { width: 100%; background: var(--surface-elevated); border-radius: var(--radius-lg); overflow: hidden; }
+        .data-table th { background: var(--primary-gradient); color: white; padding: 1rem; text-align: left; }
+        .data-table td { padding: 1rem; border-bottom: 1px solid var(--border-color); }
+        .data-table tr:hover { background: var(--surface); }
+        .status-badge { padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
+        .status-active { background: rgba(34, 197, 94, 0.1); color: #22c55e; }
+        .status-pending { background: rgba(251, 191, 36, 0.1); color: #fbbf24; }
+        @media (max-width: 992px) { .dashboard-container { grid-template-columns: 1fr; } .sidebar { display: none; } }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-icon"><i class="fas fa-paw"></i></div>
+                <span class="logo-text">Happy<span class="highlight">Pet</span></span>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="#" class="active"><i class="fas fa-th-large"></i> Dashboard</a></li>
+                <li><a href="#"><i class="fas fa-calendar-alt"></i> Appointments</a></li>
+                <li><a href="#"><i class="fas fa-users"></i> Patients</a></li>
+                <li><a href="#"><i class="fas fa-user-md"></i> Veterinarians</a></li>
+                <li><a href="#"><i class="fas fa-pills"></i> Inventory</a></li>
+                <li><a href="#"><i class="fas fa-chart-line"></i> Analytics</a></li>
+                <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                <li><a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </aside>
+        <main class="main-content">
+            <div class="dashboard-header">
+                <div>
+                    <h1>Admin Dashboard</h1>
+                    <p style="color: var(--text-secondary);">Welcome back, Administrator</p>
+                </div>
+                <div id="themeSwitcher" class="theme-switcher"><div class="theme-icon"><i class="fas fa-sun"></i><i class="fas fa-moon"></i></div></div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <p style="color: var(--text-secondary); font-weight: 600;">Total Appointments</p>
+                    <h3>156</h3>
+                    <p style="font-size: 0.875rem; color: #22c55e;"><i class="fas fa-arrow-up"></i> +12% this week</p>
+                </div>
+                <div class="stat-card">
+                    <p style="color: var(--text-secondary); font-weight: 600;">Active Patients</p>
+                    <h3>1,248</h3>
+                    <p style="font-size: 0.875rem; color: #22c55e;"><i class="fas fa-arrow-up"></i> +8% this month</p>
+                </div>
+                <div class="stat-card">
+                    <p style="color: var(--text-secondary); font-weight: 600;">Revenue</p>
+                    <h3>$24,580</h3>
+                    <p style="font-size: 0.875rem; color: #22c55e;"><i class="fas fa-arrow-up"></i> +15% this month</p>
+                </div>
+                <div class="stat-card">
+                    <p style="color: var(--text-secondary); font-weight: 600;">Staff Members</p>
+                    <h3>18</h3>
+                    <p style="font-size: 0.875rem; color: var(--text-secondary);">5 Vets, 13 Support</p>
+                </div>
+            </div>
+            <div style="background: var(--surface-elevated); padding: 2rem; border-radius: var(--radius-lg); margin-bottom: 2rem;">
+                <h2 style="margin-bottom: 1.5rem;">Recent Appointments</h2>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Pet Name</th>
+                            <th>Owner</th>
+                            <th>Vet</th>
+                            <th>Date & Time</th>
+                            <th>Service</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Max</strong></td>
+                            <td>John Doe</td>
+                            <td>Dr. Nuwan Shyamal</td>
+                            <td>Feb 5, 2026 10:00 AM</td>
+                            <td>Check-up</td>
+                            <td><span class="status-badge status-active">Confirmed</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bella</strong></td>
+                            <td>Sarah Johnson</td>
+                            <td>Dr. Sarah Johnson</td>
+                            <td>Feb 5, 2026 11:30 AM</td>
+                            <td>Vaccination</td>
+                            <td><span class="status-badge status-pending">Pending</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Charlie</strong></td>
+                            <td>Mike Peterson</td>
+                            <td>Dr. Michael Chen</td>
+                            <td>Feb 5, 2026 02:00 PM</td>
+                            <td>Dental</td>
+                            <td><span class="status-badge status-active">Confirmed</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
